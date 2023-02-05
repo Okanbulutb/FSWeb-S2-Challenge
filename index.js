@@ -74,7 +74,7 @@ function cumleKur(birinci, ikinci="", ucuncu="", dorduncu="", besinci=""){
 }
 
 /* (Oto test yok) cumleKur fonksiyonuna yalnızca 1 parametre göndererek "Hello World!" stringini elde edin, sonucu konsolde gözlemleyin */
-
+cumleKur("Hello World");
 
 
 
@@ -104,11 +104,27 @@ var bircumle;
 	*/
 	
 
-function cumlelereDonustur(/* kodlar buraya */ ){
-	/* kodlar buraya */
+function cumlelereDonustur(words,ayrac){
+	ayrac = "";
+	for(let i = 0; i < words.length; i++){
+	  const el = words[i];
+      const next = words[i + 1];
+	
+	if(next === ','){
+		ayrac += el;  
+	 }
+	 else{
+		if(!next){
+			ayrac += `${el}.`;
+		}else{
+			ayrac += `${el} `;
+		}
+	 }
+    }
+return ayrac;
 }
 
-
+console.log(cumlelereDonustur(cumleler,""));
 
 /* GÖREV 2:
 		paragrafOlustur fonksiyonuna aşağıdakileri uygulayın.
@@ -130,8 +146,11 @@ function paragrafOlustur(/* kodlar buraya */ ){
 			3a. meyveler dizisinin ilk ve son elemanlarını diziden çıkartın. (.pop ve .shift metodlarını kullanın)
  */
 //3a çözümü
-/* kodlar buraya */
 
+meyveler.pop();
+meyveler.shift();
+
+console.log(meyveler);
 
 
 
@@ -142,7 +161,9 @@ function paragrafOlustur(/* kodlar buraya */ ){
 //3b çözümü
 /* kodlar buraya */
 
-
+sebzeler.unshift("🐇");
+sebzeler.push("🦔");
+console.log(sebzeler);
 
 
 
@@ -154,9 +175,11 @@ function paragrafOlustur(/* kodlar buraya */ ){
 	//3c çözümü
 /* kodlar buraya */
 
-var manav;
+var manav = [];
 
+manav = meyveler.concat(sebzeler);
 
+console.log(manav);
 
 
 
